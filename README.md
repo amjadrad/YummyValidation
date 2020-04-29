@@ -1,5 +1,5 @@
 How to Use:
-
+```
 allprojects {
  repositories {
     jcenter()
@@ -12,3 +12,4 @@ dependencies {
     implementation 'com.github.jitpack:android-example:1.0.1'
 }
 
+```
