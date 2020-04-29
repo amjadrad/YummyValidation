@@ -9,7 +9,7 @@ allprojects {
 
 
 dependencies {
-	        implementation 'com.github.amjadrad:YummyValidation:Tag'
+	        implementation 'com.github.amjadrad:YummyValidation:1.0.0'
 	}
 
 ```
