@@ -1,0 +1,3 @@
+rootProject.name='Yummy Validation'
+include ':app'
+include ':yummyvalidationlibrary'

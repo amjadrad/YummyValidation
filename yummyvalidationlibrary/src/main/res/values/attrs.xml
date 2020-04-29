@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="YummyEditText">
+
+
+        <attr name="numeric" format="boolean" />
+        <attr name="required" format="boolean" />
+        <attr name="min_length" format="integer" />
+        <attr name="max_length" format="integer" />
+        <attr name="min_value" format="integer" />
+        <attr name="max_value" format="integer" />
+        <attr name="regex" format="string" />
+
+        <attr name="error_text_color" format="color" />
+        <attr name="error_text_size" format="integer" />
+        <attr name="error_text" format="string" />
+        <attr name="multi_error" format="boolean" />
+        <attr name="error_text_required" format="string" />
+        <attr name="error_text_min_value" format="string" />
+        <attr name="error_text_max_value" format="string" />
+        <attr name="error_text_min_length" format="string" />
+        <attr name="error_text_max_length" format="string" />
+        <attr name="error_text_regex" format="string" />
+        <attr name="error_text_numeric" format="string" />
+        <attr name="error_animation" format="boolean" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="integer" />
+        <attr name="number_separator" format="boolean" />
+        <attr name="hint" format="string" />
+        <attr name="hint_color" format="color" />
+
+        <attr name="type" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="curved" value="1" />
+        </attr>
+
+        <attr name="input_type" format="enum">
+            <enum name="TYPE_CLASS_DATETIME" value="4" />
+            <enum name="TYPE_CLASS_NUMBER" value="2" />
+            <enum name="TYPE_CLASS_PHONE" value="3" />
+            <enum name="TYPE_CLASS_TEXT" value="1" />
+            <enum name="TYPE_DATETIME_VARIATION_DATE" value="16" />
+            <enum name="TYPE_DATETIME_VARIATION_NORMAL" value="0" />
+            <enum name="TYPE_DATETIME_VARIATION_TIME" value="32" />
+            <enum name="TYPE_MASK_CLASS" value="15" />
+            <enum name="TYPE_MASK_FLAGS" value="16773120" />
+            <enum name="TYPE_MASK_VARIATION" value="4080" />
+            <enum name="TYPE_NULL" value="0" />
+            <enum name="TYPE_NUMBER_FLAG_DECIMAL" value="8192" />
+            <enum name="TYPE_NUMBER_FLAG_SIGNED" value="4096" />
+            <enum name="TYPE_NUMBER_VARIATION_NORMAL" value="0" />
+            <enum name="TYPE_NUMBER_VARIATION_PASSWORD" value="16" />
+            <enum name="TYPE_TEXT_FLAG_AUTO_COMPLETE" value="65536" />
+            <enum name="TYPE_TEXT_FLAG_AUTO_CORRECT" value="32768" />
+            <enum name="TYPE_TEXT_FLAG_CAP_CHARACTERS" value="4096" />
+            <enum name="TYPE_TEXT_FLAG_CAP_SENTENCES" value="16384" />
+            <enum name="TYPE_TEXT_FLAG_CAP_WORDS" value="8192" />
+            <enum name="TYPE_TEXT_FLAG_IME_MULTI_LINE" value="262144" />
+            <enum name="TYPE_TEXT_FLAG_MULTI_LINE" value="131072" />
+            <enum name="TYPE_TEXT_FLAG_NO_SUGGESTIONS" value="524288" />
+            <enum name="TYPE_TEXT_VARIATION_EMAIL_ADDRESS" value="32" />
+            <enum name="TYPE_TEXT_VARIATION_EMAIL_SUBJECT" value="48" />
+            <enum name="TYPE_TEXT_VARIATION_FILTER" value="176" />
+            <enum name="TYPE_TEXT_VARIATION_LONG_MESSAGE" value="80" />
+            <enum name="TYPE_TEXT_VARIATION_NORMAL" value="0" />
+            <enum name="TYPE_TEXT_VARIATION_PASSWORD" value="128" />
+            <enum name="TYPE_TEXT_VARIATION_PERSON_NAME" value="96" />
+            <enum name="TYPE_TEXT_VARIATION_PHONETIC" value="192" />
+            <enum name="TYPE_TEXT_VARIATION_POSTAL_ADDRESS" value="112" />
+            <enum name="TYPE_TEXT_VARIATION_SHORT_MESSAGE" value="64" />
+            <enum name="TYPE_TEXT_VARIATION_URI" value="16" />
+            <enum name="TYPE_TEXT_VARIATION_VISIBLE_PASSWORD" value="144" />
+            <enum name="TYPE_TEXT_VARIATION_WEB_EDIT_TEXT" value="160" />
+            <enum name="TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS" value="208" />
+            <enum name="TYPE_TEXT_VARIATION_WEB_PASSWORD" value="224" />
+
+        </attr>
+
+        <attr name="text_gravity" format="enum">
+            <enum name="AXIS_CLIP" value="8" />
+            <enum name="AXIS_PULL_AFTER" value="4" />
+            <enum name="AXIS_PULL_BEFORE" value="2" />
+            <enum name="AXIS_SPECIFIED" value="1" />
+            <enum name="AXIS_X_SHIFT" value="0" />
+            <enum name="AXIS_Y_SHIFT" value="4" />
+            <enum name="BOTTOM" value="80" />
+            <enum name="CENTER" value="17" />
+            <enum name="CENTER_HORIZONTAL" value="1" />
+            <enum name="CENTER_VERTICAL" value="16" />
+            <enum name="CLIP_HORIZONTAL" value="8" />
+            <enum name="CLIP_VERTICAL" value="128" />
+            <enum name="DISPLAY_CLIP_HORIZONTAL" value="16777216" />
+            <enum name="DISPLAY_CLIP_VERTICAL" value="268435456" />
+            <enum name="END" value="8388613" />
+            <enum name="FILL" value="119" />
+            <enum name="FILL_HORIZONTAL" value="7" />
+            <enum name="FILL_VERTICAL" value="112" />
+            <enum name="HORIZONTAL_GRAVITY_MASK" value="7" />
+            <enum name="LEFT" value="3" />
+            <enum name="NO_GRAVITY" value="0" />
+            <enum name="RELATIVE_HORIZONTAL_GRAVITY_MASK" value="8388615" />
+            <enum name="RELATIVE_LAYOUT_DIRECTION" value="8388608" />
+            <enum name="RIGHT" value="5" />
+            <enum name="START" value="8388611" />
+            <enum name="TOP" value="48" />
+            <enum name="VERTICAL_GRAVITY_MASK" value="112" />
+        </attr>
+
+        <attr name="error_text_gravity" format="enum">
+            <enum name="AXIS_CLIP" value="8" />
+            <enum name="AXIS_PULL_AFTER" value="4" />
+            <enum name="AXIS_PULL_BEFORE" value="2" />
+            <enum name="AXIS_SPECIFIED" value="1" />
+            <enum name="AXIS_X_SHIFT" value="0" />
+            <enum name="AXIS_Y_SHIFT" value="4" />
+            <enum name="BOTTOM" value="80" />
+            <enum name="CENTER" value="17" />
+            <enum name="CENTER_HORIZONTAL" value="1" />
+            <enum name="CENTER_VERTICAL" value="16" />
+            <enum name="CLIP_HORIZONTAL" value="8" />
+            <enum name="CLIP_VERTICAL" value="128" />
+            <enum name="DISPLAY_CLIP_HORIZONTAL" value="16777216" />
+            <enum name="DISPLAY_CLIP_VERTICAL" value="268435456" />
+            <enum name="END" value="8388613" />
+            <enum name="FILL" value="119" />
+            <enum name="FILL_HORIZONTAL" value="7" />
+            <enum name="FILL_VERTICAL" value="112" />
+            <enum name="HORIZONTAL_GRAVITY_MASK" value="7" />
+            <enum name="LEFT" value="3" />
+            <enum name="NO_GRAVITY" value="0" />
+            <enum name="RELATIVE_HORIZONTAL_GRAVITY_MASK" value="8388615" />
+            <enum name="RELATIVE_LAYOUT_DIRECTION" value="8388608" />
+            <enum name="RIGHT" value="5" />
+            <enum name="START" value="8388611" />
+            <enum name="TOP" value="48" />
+            <enum name="VERTICAL_GRAVITY_MASK" value="112" />
+        </attr>
+
+        <attr name="default_regex" format="enum">
+            <enum name="nothing" value="-1" />
+            <enum name="email" value="0" />
+            <enum name="phone" value="1" />
+            <enum name="mobile" value="2" />
+        </attr>
+
+    </declare-styleable>
+
+</resources>
+
