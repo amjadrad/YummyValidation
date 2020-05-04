@@ -618,4 +618,8 @@ public class YummyEditText extends LinearLayout {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    public void setText(CharSequence charSequence) {
+        this.etText.setText(charSequence);
+    }
 }
