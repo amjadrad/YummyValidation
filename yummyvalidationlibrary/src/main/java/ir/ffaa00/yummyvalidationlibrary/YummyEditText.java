@@ -28,6 +28,7 @@ public class YummyEditText extends LinearLayout {
     private View customView;
     private EditText etText;
     private TextView tvError;
+    private LinearLayout linearLayout;
 
     /**
      * if all conditions passed return true
@@ -168,6 +169,7 @@ public class YummyEditText extends LinearLayout {
         customView = inflater.inflate(R.layout.yummy_edittext, this, true);
         etText = customView.findViewById(R.id.etText);
         tvError = customView.findViewById(R.id.tvError);
+        linearLayout = customView.findViewById(R.id.tvError);
 
         errorMessage = errorText;
         etText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
@@ -255,6 +257,22 @@ public class YummyEditText extends LinearLayout {
             }
         });
 
+    }
+
+    public void addTextChangedListener(TextWatcher textWatcher) {
+        etText.addTextChangedListener(textWatcher);
+    }
+
+    public EditText getEditText() {
+        return this.etText;
+    }
+
+    public TextView getTextViewError() {
+        return this.tvError;
+    }
+
+    public void noPadding(int left, int top, int right, int bottom) {
+        this.linearLayout.setPadding(left, top, right, bottom);
     }
 
     public String getText() {
