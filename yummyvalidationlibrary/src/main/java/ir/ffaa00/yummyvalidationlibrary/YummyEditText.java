@@ -242,13 +242,16 @@ public class YummyEditText extends LinearLayout {
 
                     String text = etText.getText().toString();
                     try {
-                        String t1 = text.replace(",", "");
+                        String t1 = FinanceHelper.convertWithCommaToWithout(text);
                         if (t1.length() > 3) {
                             String n = FinanceHelper.convertMoneyToWithComma(t1);
                             if (!n.equals(text)) {
                                 etText.setText(n);
                                 etText.setSelection(n.length());
                             }
+                        } else if (!t1.equals(text)) {
+                            etText.setText(t1);
+                            etText.setSelection(t1.length());
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
