@@ -10,24 +10,11 @@
     <ir.ffaa00.yummyvalidationlibrary.YummyEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:default_regex="email"
-        app:error_animation="true"
-        app:error_text_max_length="زیاده"
-        app:error_text_regex="فرمت ایمیل اشتباه است"
-        app:hint="ایمیل"
-        app:input_type="TYPE_CLASS_TEXT"
-        app:max_length="10"
-        app:multi_error="true"
-        app:required="false"
-        app:type="normal" />
-
-    <ir.ffaa00.yummyvalidationlibrary.YummyEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         app:error_animation="true"
         app:error_text="لطفا فیلد نام را حتما پر کنید."
         app:error_text_max_length="تعداد کاراکتر از بیش از حد است."
         app:error_text_max_value="خیلی زیاد وارد کردی عزیزم."
+        app:et_background="@drawable/selector_et_c"
         app:hint="شماره همراه"
         app:max_length="2"
         app:max_value="10"

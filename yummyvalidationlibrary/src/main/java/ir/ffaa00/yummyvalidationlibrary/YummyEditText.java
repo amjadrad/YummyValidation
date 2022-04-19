@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -105,6 +106,8 @@ public class YummyEditText extends LinearLayout {
     private int inputType = InputType.TYPE_CLASS_TEXT;
     private int defaultRegex = 0;
 
+    public Drawable etBackground = null;
+
     public static int YUMMY_EDIT_TEXT_TYPE_NORMAL = 0;
     public static int YUMMY_EDIT_TEXT_TYPE_CURVED = 1;
 
@@ -148,6 +151,7 @@ public class YummyEditText extends LinearLayout {
         errorTextNumeric = a.getString(R.styleable.YummyEditText_error_text_numeric);
         errorTextColor = a.getColor(R.styleable.YummyEditText_error_text_color, Color.parseColor("#cc0022"));
         errorTextSize = a.getInt(R.styleable.YummyEditText_error_text_size, 10);
+        etBackground = a.getDrawable(R.styleable.YummyEditText_et_background);
         textColor = a.getColor(R.styleable.YummyEditText_text_color, Color.parseColor("#444444"));
         textSize = a.getInt(R.styleable.YummyEditText_text_size, 14);
         isNumberSeparator = a.getBoolean(R.styleable.YummyEditText_number_separator, false);
@@ -169,7 +173,6 @@ public class YummyEditText extends LinearLayout {
         customView = inflater.inflate(R.layout.yummy_edittext, this, true);
         etText = customView.findViewById(R.id.etText);
         tvError = customView.findViewById(R.id.tvError);
-        linearLayout = customView.findViewById(R.id.tvError);
 
         errorMessage = errorText;
         etText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
@@ -186,6 +189,9 @@ public class YummyEditText extends LinearLayout {
             etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et));
         } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
             etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_curved));
+        }
+        if (etBackground != null) {
+            etText.setBackground(etBackground);
         }
 
         switch (defaultRegex) {

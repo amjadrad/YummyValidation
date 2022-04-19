@@ -14,6 +14,7 @@
 
         <attr name="error_text_color" format="color" />
         <attr name="error_text_size" format="integer" />
+        <attr name="et_background" format="reference" />
         <attr name="error_text" format="string" />
         <attr name="multi_error" format="boolean" />
         <attr name="error_text_required" format="string" />
