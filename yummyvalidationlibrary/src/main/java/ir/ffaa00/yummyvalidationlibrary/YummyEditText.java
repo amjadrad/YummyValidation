@@ -107,6 +107,7 @@ public class YummyEditText extends LinearLayout {
     private int defaultRegex = 0;
 
     public Drawable etBackground = null;
+    public Drawable etBackgroundError = null;
 
     public static int YUMMY_EDIT_TEXT_TYPE_NORMAL = 0;
     public static int YUMMY_EDIT_TEXT_TYPE_CURVED = 1;
@@ -152,6 +153,7 @@ public class YummyEditText extends LinearLayout {
         errorTextColor = a.getColor(R.styleable.YummyEditText_error_text_color, Color.parseColor("#cc0022"));
         errorTextSize = a.getInt(R.styleable.YummyEditText_error_text_size, 10);
         etBackground = a.getDrawable(R.styleable.YummyEditText_et_background);
+        etBackgroundError = a.getDrawable(R.styleable.YummyEditText_et_background_error);
         textColor = a.getColor(R.styleable.YummyEditText_text_color, Color.parseColor("#444444"));
         textSize = a.getInt(R.styleable.YummyEditText_text_size, 14);
         isNumberSeparator = a.getBoolean(R.styleable.YummyEditText_number_separator, false);
@@ -185,13 +187,14 @@ public class YummyEditText extends LinearLayout {
         etText.setInputType(inputType);
         etText.setGravity(textGravity);
         tvError.setGravity(textGravity);
-        if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
-            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et));
-        } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
-            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_curved));
-        }
-        if (etBackground != null) {
-            etText.setBackground(etBackground);
+        if (etBackground == null) {
+            if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
+                etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et));
+            } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
+                etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_curved));
+            } else {
+                etText.setBackground(etBackground);
+            }
         }
 
         switch (defaultRegex) {
@@ -220,19 +223,27 @@ public class YummyEditText extends LinearLayout {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 checkConditions();
                 if (isValid) {
-                    if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
-                        etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et));
-                    } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
-                        etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_curved));
+                    if (etBackground == null) {
+                        if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
+                            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et));
+                        } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
+                            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_curved));
+                        }
+                    } else {
+                        etText.setBackground(etBackground);
                     }
                     tvError.setVisibility(INVISIBLE);
                 } else {
                     boolean isTextChanged = errorMessage.equals(tvError.getText().toString());
                     tvError.setText(errorMessage);
-                    if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
-                        etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_error));
-                    } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
-                        etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_error_curved));
+                    if (etBackgroundError == null) {
+                        if (type == YUMMY_EDIT_TEXT_TYPE_NORMAL) {
+                            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_error));
+                        } else if (type == YUMMY_EDIT_TEXT_TYPE_CURVED) {
+                            etText.setBackground(context.getResources().getDrawable(R.drawable.selector_et_error_curved));
+                        }
+                    } else {
+                        etText.setBackground(etBackgroundError);
                     }
                     tvError.setVisibility(VISIBLE);
                     if (isErrorAnimation && isTextChanged) {

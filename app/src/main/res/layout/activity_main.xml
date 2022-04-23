@@ -15,6 +15,7 @@
         app:error_text_max_length="تعداد کاراکتر از بیش از حد است."
         app:error_text_max_value="خیلی زیاد وارد کردی عزیزم."
         app:et_background="@drawable/selector_et_c"
+        app:et_background_error="@drawable/selector_et_error"
         app:hint="شماره همراه"
         app:max_length="2"
         app:max_value="10"
